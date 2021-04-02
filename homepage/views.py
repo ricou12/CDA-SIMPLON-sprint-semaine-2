@@ -24,7 +24,9 @@ def register(request):
         email =  request.GET['email']
         password = request.GET['password']
         # Vérifie que l'émail n'exite pas.
-
-        return render(request, 'homepage/register.html',{'message':'Merci de vous êtes enregistrer!'})
+        # hasher le mot de pass
+        # ajouter dans la base de donnée
+        # renvoyer un message à l'utilisateur
+        return render(request, 'homepage/register.html',{'message':'Merci ' + prenom + ' de vous êtes enregistrer '})
     else:
-        return render(request, 'homepage/register.html',{'error_message':'erreur'})
+        return render(request, 'homepage/register.html',{'message':'erreur'})
